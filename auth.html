@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <title>Auth - Happyly</title>
+
+    <!-- Favicons -->
+    <link href="assets/img/logos.png" rel="icon">
+
+
+</head>
+
+<body>
+
+    <!-- blue circle background -->
+    <div class="d-none d-md-block ball login bg-primary bg-gradient position-absolute rounded-circle"></div>
+
+    <!-- logo name -->
+    <div class="position-absolute top-0 start-0 p-3">
+        <a href="index.html" class="text-decoration-none fw-bold fs-5">Happyly</a>
+    </div>
+
+    <!-- Login Section -->
+    <div class="container login__form active">
+        <div class="row vh-100 w-100 align-self-center">
+            <div class="col-12 col-lg-6 col-xl-6 px-5">
+                <div class="row vh-100">
+                    <div class="col align-self-center p-5 w-100">
+                        <h3 class="fw-bolder">WELCOME BACK !</h3>
+                        <p class="fw-lighter fs-6">Don't have an account, <span id="signUp" role="button" class="text-primary">Sign Up</span></p>
+                        <!-- form login section -->
+                        <form action="" class="mt-5">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Email</label>
+                                <input 
+                                type="email" 
+                                id="email_signin"
+                                class="form-control text-indent shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3" 
+                                placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Password</label>
+                                <div class="d-flex position-relative">
+                                    <input 
+                                    type="password" 
+                                    id="psw_signin"
+                                    class="form-control text-indent auth__password shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3"
+                                    placeholder="Password">
+                                    <span class="password__icon text-primary fs-4 fw-bold bi bi-eye-slash"></span>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <input 
+                                type="submit" 
+                                value="Sign In"
+                                id="signin-button"
+                                class="btn btn-outline-dark btn-lg rounded-pill mt-4 w-100"
+                                />
+                            </div>
+                        </form>
+                        <p class="mt-5 text-center">Or Sign in with Google</p>
+                        <div class="row text-center">
+                            <div class="col my-3">
+                                <a id = "googleSignInBtn" class="btn btn-outline-dark border-2 rounded-circle"><i class="bi bi-google fs-5"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-lg-block col-lg-6 col-xl-6 p-5">
+                <div class="row vh-100 p-5">
+                    <div class="col align-self-center p-5 text-center">
+                        <img src="assets/img/auth/masuk.png" class="bounce" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- pop up -->
+    <div id="popup" class="popup"></div>
+
+    <!-- Register Section -->
+    <div class="container register__form">
+        <div class="row vh-100 w-100 align-self-center">
+            <div class="d-none d-lg-block col-lg-6 col-xl-6 p-5">
+                <div class="row vh-100 p-5">
+                    <div class="col align-self-center p-5 text-center">
+                        <img src="assets/img/auth/daftar.png" class="bounce" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 col-xl-6 px-5">
+                <div class="row vh-100">
+                    <div class="col align-self-center p-5 w-100">
+                        <h3 class="fw-bolder">REGISTER HERE !</h3>
+                        <p class="fw-lighter fs-6">Have an account, <span id="signIn" role="button" class="text-primary">Sign In</span></p>
+                        <!-- form register section -->
+                        <form action="" class="mt-10">
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nama</label>
+                                <input 
+                                type="text" 
+                                id="name"
+                                class="form-control text-indent shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3" 
+                                placeholder="Nama">
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Tempat & Tanggal Lahir</label>
+                                <input 
+                                type="text" 
+                                id="ttl"
+                                class="form-control text-indent shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3" 
+                                placeholder="Tempat & Tanggal Lahir">
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Nomor Telepon</label>
+                                <input 
+                                type="number" 
+                                id="nohp"
+                                class="form-control text-indent shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3" 
+                                placeholder="Nomor Telepon">
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Email</label>
+                                <input 
+                                type="email" 
+                                id="email_signup"
+                                class="form-control text-indent shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3" 
+                                placeholder="name@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Password</label>
+                                <div class="d-flex position-relative">
+                                    <input 
+                                    type="password" 
+                                    id="psw_signup"
+                                    class="form-control text-indent auth__password shadow-sm bg-grey-light border-0 rounded-pill fw-lighter fs-7 p-3" 
+                                    placeholder="Password">
+                                    <span class="password__icon text-primary fs-4 fw-bold bi bi-eye-slash"></span>
+                                </div>
+                            </div>
+                            <div class="col text-center">
+                                <input 
+                                type="submit" 
+                                value="Sign Up"
+                                id="signup-button"
+                                class="btn btn-outline-dark btn-lg rounded-pill mt-4 w-100"
+                                />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script type="module" src="assets/js/login.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Stress Test - Happyly</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicons -->
+    <link href="assets/img/logos.png" rel="icon" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Main CSS File -->
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
+
+  <body class="starter-page-page">
+    <header id="header" class="header d-flex align-items-center fixed-top">
+      <div
+        class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
+      >
+        <a
+          href="home.html"
+          class="logo d-flex align-items-center me-auto me-xl-0"
+        >
+          <h1 class="sitename">Happyly</h1>
+        </a>
+
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="mental.html">Mental Health</a></li>
+            <li><a href="stress.html" class="active">Stress Test</a></li>
+            <li class="dropdown">
+              <a href="#"
+                ><span>Informasi</span>
+                <i class="bi bi-chevron-down toggle-dropdown"></i
+              ></a>
+              <ul>
+                <li><a href="materi-mental.html">Penanganan Mental</a></li>
+                <li><a href="materi-stress.html">Penanganan Stress</a></li>
+              </ul>
+            </li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+
+        <!-- Profile Card -->
+        <div class="profile-dropdown">
+          <div onclick="toggle()" class="profile-dropdown-btn">
+            <div class="profile-img"></div>
+            <span id="userName">
+              <i class="fa-solid fa-angle-down"></i>
+            </span>
+          </div>
+
+          <ul class="profile-dropdown-list">
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-solid fa-envelope"></i>
+                <span id="userEmail"></span>
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-regular fa-calendar-days"></i>
+                <span id="userTtl"></span>
+              </a>
+            </li>
+
+            <li class="profile-dropdown-list-item">
+              <a href="#">
+                <i class="fa-solid fa-phone"></i>
+                <span id="userNohp"></span>
+              </a>
+            </li>
+            <hr />
+
+            <li class="profile-dropdown-list-item">
+              <a id="signout-button" href="#">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Log out
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Profile Card -->
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- Mental Test Title -->
+      <div class="page-title light-background">
+        <div class="container py-5">
+          <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-sm-12">
+              <div class="card shadow-sm">
+                <div class="card-header text-center">
+                  <h4 class="mb-0">Stress Test</h4>
+                  <small id="question-progress">Test 1 out of 10</small>
+                </div>
+                <div class="card-body">
+                  <div class="mb-3">
+                    <div class="d-flex justify-content-between">
+                      <span>Test Progress:</span>
+                      <span id="timer">10:00</span>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-success"
+                        role="progressbar"
+                        id="progress-bar"
+                        style="width: 20%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div id="question-container">
+                    <h5 class="mb-3">Test 1</h5>
+                    <p></p>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="question1"
+                        id="q1a"
+                        value="Database"
+                      />
+                      <label class="form-check-label" for="q1a"></label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="question1"
+                        id="q1b"
+                        value="Connectivity"
+                      />
+                      <label class="form-check-label" for="q1b"></label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="question1"
+                        id="q1c"
+                        value="User interface"
+                      />
+                      <label class="form-check-label" for="q1c"></label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="question1"
+                        id="q1d"
+                        value="Design Platform"
+                      />
+                      <label class="form-check-label" for="q1d"></label>
+                    </div>
+                  </div>
+                  <div class="button-container">
+                    <button class="btn btn-back d-none" id="back-button">
+                      &larr; Back
+                    </button>
+                    <button class="btn btn-next" id="next-button">
+                      Next &rarr;
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="card shadow-sm mt-4 text-center d-none"
+                id="result-container"
+              >
+                <div class="card-body">
+                  <div class="image-container">
+                    <img
+                      id="result-image"
+                      src=""
+                      alt="Result Image"
+                      class="result-image"
+                    />
+                  </div>
+                  <h5>🎉 Congratulations. You passed!</h5>
+                  <p>Your Point: <strong id="point"></strong></p>
+                  <p>Your Score: <strong id="score"></strong></p>
+                  <p>Diagnosis: <strong id="diagnosis"></strong></p>
+                  <div class="my-3">
+                    <button class="btn btn-primary" onclick="restartTest()">
+                      Restart Test
+                    </button>
+                    <button
+                      class="btn btn-secondary"
+                      onclick="window.location.href='materi-stress.html'"
+                    >
+                      Informasi
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Mental Test Title -->
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="container footer-top">
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 footer-about">
+            <a href="home.html" class="logo d-flex align-items-center">
+              <span class="sitename">Happyly</span>
+            </a>
+            <div class="footer-contact pt-3">
+              <p>
+                Jl. Citra Raya Boulevard No.01 BlokS No.25, Panongan, Kec.
+                Panongan
+              </p>
+              <p>Kabupaten Tangerang, Banten 15711</p>
+              <p class="mt-3">
+                <strong>Phone:</strong> <span>+62 852 8333 8120</span>
+              </p>
+              <p>
+                <strong>Email:</strong> <span>kelompoksikcr@gmail.com</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="mental.html">Mental Health Test</a></li>
+              <li><a href="stress.html">Stress Health Test</a></li>
+              <li><a href="materi-mental.html">Penanganan Mental</a></li>
+              <li><a href="materi-stress.html">Penanganan Stress</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="mental.html">Mental Health Test</a></li>
+              <li><a href="stress.html">Stress Health Test</a></li>
+              <li><a href="materi-mental.html">Penanganan Mental</a></li>
+              <li><a href="materi-stress.html">Penanganan Stress</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="container copyright text-center mt-4">
+        <p>
+          © <span>Copyright 2025</span>
+          <strong class="px-1 sitename">Happyly</strong>
+          <span>All Rights Reserved</span>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scroll Top -->
+    <a
+      href="#"
+      id="scroll-top"
+      class="scroll-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+    <!-- profile card -->
+    <script src="assets/js/profile.js"></script>
+
+    <!-- Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/stress.js" type="module"></script>
+
+    <!-- getdb -->
+    <script src="assets/js/getdb.js" type="module"></script>
+  </body>
+</html>
