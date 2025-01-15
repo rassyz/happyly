@@ -11,7 +11,7 @@ List the main features of Happyly:
 - Google Authentication
 - Mental Health Test
 - Stress Test
-- Materi of Penanganan Mental dan Stress
+- Explanation of Mental Management and Stress Management
 
 ---
 
