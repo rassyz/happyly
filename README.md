@@ -8,6 +8,7 @@ Website Mental Health Test dengan Bootstrap 5 dan Firebase (Authentication, Real
 
 List the main features of Happyly:
 
+- Google Authentication
 - Mental Health Test
 - Stress Test
 - Materi of Penanganan Mental dan Stress
